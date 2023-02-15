@@ -21,6 +21,12 @@ require('packer').init({
       open_fn = function()
         return require('packer.util').float({ border = 'solid' })
       end,
+      working_sym = ' ',
+      error_sym = ' ',
+      done_sym = ' ',
+      removed_sym = ' ',
+      moved_sym = ' ',
+      header_sym = '━',
     },
   })
 
@@ -258,6 +264,14 @@ use({
       require('user.plugins.treesitter')
     end,
   })
+
+use('nvim-telescope/telescope.nvim')
+use('crispgm/telescope-heading.nvim')
+
+use {
+    "nvim-telescope/telescope-file-browser.nvim",
+    requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" }
+}
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
