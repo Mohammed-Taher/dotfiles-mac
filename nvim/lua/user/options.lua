@@ -7,6 +7,8 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
+vim.opt.cmdheight=0
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 
