@@ -13,6 +13,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 vim.opt.wildmode = 'longest:full,full'
+vim.opt.completeopt = 'menuone,longest,preview'
 
 vim.opt.title = true
 vim.opt.mouse = 'a'
@@ -34,7 +35,7 @@ vim.opt.splitright = true
 vim.opt.scrolloff = 8
 vim.opt.sidescrolloff = 8
 
-vim.opt.signcolumn = 'yes:1'
+vim.opt.signcolumn = 'yes:2'
 
 vim.opt.confirm = true
 
