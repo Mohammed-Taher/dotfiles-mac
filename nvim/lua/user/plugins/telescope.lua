@@ -1,4 +1,5 @@
 local actions = require('telescope.actions')
+local icons = require("nvim-nonicons")
 
 vim.cmd([[
   highlight link TelescopePromptTitle PMenuSel
@@ -10,49 +11,49 @@ vim.cmd([[
 ]])
 
 require('telescope').setup({
-  defaults = {
-    path_display = { truncate = 1 },
-    prompt_prefix = '   ',
-    selection_caret = '  ',
-    layout_config = {
-      prompt_position = 'top',
-    },
-    sorting_strategy = 'ascending',
-    mappings = {
-      ["i"] = {
-        ['<esc>'] = actions.close,
-        ['<C-Down>'] = actions.cycle_history_next,
-        ['<C-Up>'] = actions.cycle_history_prev,
-        -- ['<C-r>'] = fb_actions.rename,
-        -- ['<C-c>'] = fb_actions.copy,
-        -- ['<C-m>'] = fb_actions.move,
-        -- ['<del>'] = fb_actions.remove,
+    defaults = {
+      path_display = { truncate = 1 },
+      prompt_prefix = "  " .. icons.get("telescope") .. "  ",
+      selection_caret = " ❯ ",
+      layout_config = {
+        prompt_position = 'top',
       },
-      ["n"] = {
+      sorting_strategy = 'ascending',
+      mappings = {
+        ["i"] = {
+          ['<esc>'] = actions.close,
+          ['<C-Down>'] = actions.cycle_history_next,
+          ['<C-Up>'] = actions.cycle_history_prev,
+          -- ['<C-r>'] = fb_actions.rename,
+          -- ['<C-c>'] = fb_actions.copy,
+          -- ['<C-m>'] = fb_actions.move,
+          -- ['<del>'] = fb_actions.remove,
+        },
+        ["n"] = {
           -- unmap toggling `fb_actions.toggle_browser`
           f = false,
         },
+      },
+      file_ignore_patterns = { '.git/' },
     },
-    file_ignore_patterns = { '.git/' },
-  },
-  pickers = {
-    find_files = {
-      hidden = true,
-    },
-    buffers = {
-      previewer = false,
-      layout_config = {
-        width = 80,
+    pickers = {
+      find_files = {
+        hidden = true,
+      },
+      buffers = {
+        previewer = false,
+        layout_config = {
+          width = 80,
+        },
+      },
+      oldfiles = {
+        prompt_title = 'History',
+      },
+      lsp_references = {
+        previewer = false,
       },
     },
-    oldfiles = {
-      prompt_title = 'History',
-    },
-    lsp_references = {
-      previewer = false,
-    },
-  },
-  preview = {
+    preview = {
       mime_hook = function(filepath, bufnr, opts)
         local is_image = function(filepath)
           local image_extensions = {'png','jpg','jpeg'}   -- Supported image formats
@@ -77,7 +78,7 @@ require('telescope').setup({
         end
       end
     },
-})
+  })
 
 require('telescope').load_extension('fzf')
 require('telescope').load_extension('live_grep_args')

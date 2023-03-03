@@ -7,13 +7,23 @@ require('nvim-tree').setup({
       icons = {
         glyphs = {
           git = {
-            unstaged = "",
-            staged = "",
-            unmerged = "",
-            renamed = "",
-            untracked = "",
-            deleted = "",
-            ignored = "◌",
+            unstaged = " ",
+            staged = " ",
+            unmerged = " ",
+            renamed = " ",
+            untracked = " ",
+            deleted = " ",
+            ignored = " ",
+          },
+          folder = {
+            arrow_closed = " ",
+            arrow_open = " ",
+            default = " ",
+            open = " ",
+            empty = " ",
+            empty_open = " ",
+            symlink = " ",
+            symlink_open = " ",
           },
         },
         show = {
