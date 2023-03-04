@@ -30,6 +30,14 @@ require('lspconfig').volar.setup({
     on_attach = require('lsp-format').on_attach
 })
 
+-- Svelte
+require('lspconfig').svelte.setup({
+    capabilities = capabilities,
+    filetypes = { 'svelte' },
+    on_attach = require('lsp-format').on_attach
+})
+
+
 -- Tailwind
 require('lspconfig').tailwindcss.setup({
     capabilities = capabilities,

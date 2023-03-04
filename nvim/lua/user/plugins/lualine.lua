@@ -23,7 +23,7 @@ require('lualine').setup({
       'branch',
       'diff',
       separator,
-      '"  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
+      '"  " .. tostring(#vim.tbl_keys(vim.lsp.buf_get_clients()))',
       { 'diagnostics', sources = { 'nvim_diagnostic' } },
       separator,
     },
@@ -31,13 +31,21 @@ require('lualine').setup({
       'filename'
     },
     lualine_x = {
-      'filetype',
-      'encoding',
-      'fileformat',
+      {
+        require('noice').api.statusline.mode.get,
+        cond = require('noice').api.statusline.mode.has,
+        color = { fg = '#ff9e64' }
+      },
+      separator,
+      {
+        'filetype',
+        icon_only = false,
+        icon = { align = 'right' }
+      },
+      separator,
     },
     lualine_y = {
-      separator,
-      '(vim.bo.expandtab and "󱁐 " or "󰌒 ") .. " " .. vim.bo.shiftwidth',
+      '(vim.bo.expandtab and " " or " ") .. " " .. vim.bo.shiftwidth',
       separator,
     },
     lualine_z = {

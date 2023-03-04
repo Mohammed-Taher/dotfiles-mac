@@ -24,7 +24,7 @@ dashboard.setup({
       {
         desc = '  Dotfiles',
         group = 'Number',
-        action = 'Telescope dotfiles',
+        action = 'Telescope find_files dotfiles',
         key = 'd',
       },
     },
