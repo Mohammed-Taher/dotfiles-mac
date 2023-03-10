@@ -108,7 +108,6 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nvim ~/.zshrc"
 alias zshreload="source ~/.zshrc"
 alias python="python3"
-# alias nvim="$HOME/Downloads/nvim-macos/bin/nvim"
 alias kittyconfig="nvim $HOME/Code/Mohammed-Taher/kitty/kitty.conf"
 alias nvimconfig="cd $HOME/Code/Mohammed-Taher/dotfiles/nvim && nvim"
 alias tmuxconfig="nvim $HOME/Code/Mohammed-Taher/.tmux.conf"

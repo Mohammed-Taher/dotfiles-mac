@@ -23,6 +23,20 @@ require('lspconfig').intelephense.setup({
 --    }
 --})
 
+-- html
+require('lspconfig').html.setup({
+    capabilities = capabilities,
+    filetypes = { 'html', 'njk', 'blade' },
+    on_attach = require('lsp-format').on_attach
+})
+
+-- css
+require('lspconfig').cssls.setup({
+    capabilities = capabilities,
+    filetypes = { 'css', 'scss', 'less' },
+    on_attach = require('lsp-format').on_attach
+})
+
 -- Vue, Javascript, Typescript
 require('lspconfig').volar.setup({
     capabilities = capabilities,

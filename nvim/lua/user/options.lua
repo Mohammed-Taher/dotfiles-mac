@@ -7,7 +7,7 @@ vim.opt.smartindent = true
 
 vim.opt.wrap = false
 
-vim.opt.cmdheight=0
+vim.opt.cmdheight = 0
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -26,8 +26,8 @@ vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
 vim.opt.list = true
-vim.opt.listchars = { tab = '. ', trail = '.'}
-vim.opt.fillchars:append({ eob = ' '})
+vim.opt.listchars = { tab = '. ', trail = '.' }
+vim.opt.fillchars:append({ eob = ' ' })
 
 vim.opt.splitbelow = true
 vim.opt.splitright = true
@@ -44,3 +44,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.undofile = true
 vim.opt.backup = true
 vim.opt.backupdir:remove('.')
+
+vim.cmd [[
+let g:vim_markdown_frontmatter = 1
+]]

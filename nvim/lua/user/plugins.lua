@@ -398,6 +398,20 @@ use({
   end,
 })
 
+use({
+  'preservim/vim-markdown',
+  config = function()
+    vim.cmd [[
+    let g:vim_markdown_folding_disabled = 1
+    let g:vim_markdown_frontmatter = 1
+    let g:vim_markdown_strikethrough = 1
+    let g:vim_markdown_fenced_languages = ['php=php', 'html=html', 'css=css', 'python=python']
+
+    ]]
+  end,
+})
+
+
 
 -- Automatically set up your configuration after cloning packer.nvim
 -- Put this at the end after all plugins
